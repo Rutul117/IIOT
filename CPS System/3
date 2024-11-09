@@ -1,3 +1,24 @@
+'''
+Here’s how to wire up the components for the ESP32 LED Web Server to control the LEDs through the web interface:
+
+Required Components:
+ESP32 Development Board
+2x LED
+2x 220Ω Resistor
+Breadboard
+Jumper Wires
+USB Cable (to connect the ESP32 to the computer)
+Connections for the LEDs:
+LED 1 (GPIO 12):
+Resistor: Connect one end of a 220Ω resistor to GPIO 12 of the ESP32.
+LED: Connect the other end of the resistor to the anode (long leg) of the first LED.
+Ground (GND): Connect the cathode (short leg) of the LED to the GND pin on the ESP32.
+LED 2 (GPIO 14):
+Resistor: Connect one end of a 220Ω resistor to GPIO 14 of the ESP32.
+LED: Connect the other end of the resistor to the anode (long leg) of the second LED.
+Ground (GND): Connect the cathode (short leg) of the LED to the GND pin on the ESP32
+'''
+
 #include <WiFi.h>
 #include <ESPAsyncWebServer.h>
 #include <ESPAsyncTCP.h>
