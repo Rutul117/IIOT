@@ -1,0 +1,42 @@
+// Define the potentiometer pin
+const int potPin = 34; // GPIO 34 on ESP32 for analog input
+
+// Variable to store the potentiometer value
+int potValue = 0;
+
+void setup() {
+  // Initialize serial communication at a baud rate of 115200
+  Serial.begin(115200);
+  delay(1000); // Delay to allow initialization
+}
+
+void loop() {
+  // Read the analog value from the potentiometer
+  potValue = analogRead(potPin);
+
+  // Check if the potentiometer value exceeds the threshold
+  if (potValue > 2000) {
+    Serial.println("warning"); // Print warning if value exceeds 2000
+  }
+
+  // Print the potentiometer value to the Serial Monitor
+  Serial.println(potValue);
+
+  // Delay to reduce the rate of output messages
+  delay(500); // 0.5 second delay
+}
+
+
+
+
+
+
+
+Explanation:
+const int potPin = 34;: Specifies GPIO pin 34, where the potentiometer is connected.
+int potValue = 0;: Declares a variable to store the potentiometer reading.
+void setup(): Initializes serial communication with a baud rate of 115200 to send data to the Serial Monitor.
+potValue = analogRead(potPin);: Reads the analog value from GPIO 34 and assigns it to potValue.
+if (potValue > 2000): Checks if potValue exceeds 2000. If so, it prints "warning" to the Serial Monitor.
+Serial.println(potValue);: Prints the potentiometer reading.
+delay(500);: Adds a half-second delay between readings for easier monitoring.
